@@ -21,7 +21,7 @@ After Training , you will find the trained model structure and weights are store
 
 To run your emotion detection file
 <br />Run TestEmotionDetector.py
-<br />You can either take your live camera feed or paste the path of the video by commenting the other out.
+<br />You can either take your live camera feed or paste the path of the video by commenting the code other out in TestEmotionDetector.py .
 
 To analyse the model
 <br />Run EvaluateEmotionDetector.py
