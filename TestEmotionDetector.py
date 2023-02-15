@@ -15,11 +15,13 @@ emotion_model = model_from_json(loaded_model_json)
 emotion_model.load_weights("model//emotion_model.h5")
 print("Loaded model from disk")
 
-# start the webcam feed
-# cap = cv2.VideoCapture(0)
 
-# pass here your video path
-cap = cv2.VideoCapture("C:\\Users\\shuai\\Downloads\\pexels-gabby-k-5273028.mp4")
+# You can either take your live camera feed or paste the path of the video by commenting the other.
+# start the webcam feed
+cap = cv2.VideoCapture(0)
+
+# paste here your video path
+# cap = cv2.VideoCapture("Paste path here")
 
 while True:
     # Find haar cascade to draw bounding box around face
