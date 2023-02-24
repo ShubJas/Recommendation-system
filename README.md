@@ -6,8 +6,12 @@ download FER2013 dataset
 
 
 Packages need to be installed
-
-
+<br />numpy
+<br />opencv-python
+<br />keras
+<br />tensorflow
+<br />pillow
+<br />
 Run pip install -r requirements.txt to install all dependencies.
 
 
