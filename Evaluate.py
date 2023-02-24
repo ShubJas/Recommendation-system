@@ -1,11 +1,12 @@
-
+# import required packages
 import numpy as np
 from keras.models import model_from_json
 import matplotlib.pyplot as plt
 from keras.preprocessing.image import ImageDataGenerator
 from sklearn.metrics import confusion_matrix, classification_report,ConfusionMatrixDisplay
+import tensorflow as tf
 
-
+# output labels
 emotion_dict = {0: "Angry", 1: "Disgusted", 2: "Fearful", 3: "Happy", 4: "Neutral", 5: "Sad", 6: "Surprised"}
 
 # load json and create model
@@ -30,11 +31,9 @@ test_generator = test_data_gen.flow_from_directory(
         class_mode='categorical')
 
 
-import tensorflow as tf
 
 
-# do prediction on test data
-
+# doing prediction on test data
 
 predictions = np.array([])
 labels =  np.array([])
@@ -45,7 +44,7 @@ for x, y in test_generator:
   labels = np.concatenate([labels, np.argmax(y,axis=-1)])
   I += 1
   if I > 100:  # this if-break statement reduces the running time.
-    break       #
+    break       
 ConfusionMatrixDisplay(
     confusion_matrix=tf.math.confusion_matrix(
         labels=labels, predictions=predictions)
