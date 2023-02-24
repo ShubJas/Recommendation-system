@@ -1,8 +1,9 @@
+# import required packages
 import cv2
 import numpy as np
 from keras.models import model_from_json
 
-
+# output labels
 emotion_dict = {0: "Angry", 1: "Disgusted", 2: "Fearful", 3: "Happy", 4: "Neutral", 5: "Sad", 6: "Surprised"}
 
 # load json and create model
@@ -20,7 +21,7 @@ print("Loaded model from disk")
 # start the webcam feed
 cap = cv2.VideoCapture(0)
 
-# paste here your video path
+# paste your video path here 
 # cap = cv2.VideoCapture("Paste path here")
 
 while True:
@@ -46,9 +47,11 @@ while True:
         maxindex = int(np.argmax(emotion_prediction))
         cv2.putText(frame, emotion_dict[maxindex], (x+5, y-20), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
 
+    # display frame by frame
     cv2.imshow('Emotion Detection', frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(1) & 0xFF == ord('q'): #exit by pressing q key
         break
 
+# release all resouces on exit
 cap.release()
 cv2.destroyAllWindows()
