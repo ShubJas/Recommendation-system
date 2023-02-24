@@ -12,7 +12,8 @@ Packages need to be installed
 <br />tensorflow
 <br />pillow
 <br />
-Run pip install -r requirements.txt to install all dependencies.
+Run <br />
+pip install -r requirements.txt to install all dependencies.
 
 
 To train Emotion detector model
