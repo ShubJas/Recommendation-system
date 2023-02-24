@@ -14,8 +14,7 @@ Packages need to be installed
 <br />
 
 
-Run <br />
-pip install -r requirements.txt to install all dependencies.
+- Run <code>pip install -r requirements.txt</code> to install all dependencies.
 
 
 To train Emotion detector model
