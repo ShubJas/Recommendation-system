@@ -6,11 +6,9 @@ download FER2013 dataset
 
 
 Packages need to be installed
-<br />pip install numpy
-<br />pip install opencv-python
-<br />pip install keras
-<br />pip install tensorflow
-<br />pip install pillow
+
+
+Run pip install -r requirements.txt to install all dependencies.
 
 
 To train Emotion detector model
