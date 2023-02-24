@@ -18,16 +18,16 @@ Packages need to be installed
 
 
 To train Emotion detector model
-<br />Run TrainEmotionDetector.py
+<br />Run Train.py
 
 After Training , you will find the trained model structure and weights are stored in your project directory. emotion_model.json emotion_model.h5
 <br />copy these two files, create model folder in your project directory and paste it.
 
 To run your emotion detection file
-<br />Run TestEmotionDetector.py
-<br />You can either take your live camera feed or paste the path of the video by commenting the code other out in TestEmotionDetector.py .
+<br />Run Test.py
+<br />You can either take your live camera feed or paste the path of the video by commenting the code other out in Test.py .
 
 To analyse the model
-<br />Run EvaluateEmotionDetector.py
+<br />Run detect_emotion.py
 
 Music recom system to be added
