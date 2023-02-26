@@ -28,6 +28,6 @@ Run detect_emotion.py
 <br />You can either take your live camera feed or paste the path of the video by commenting the code other out in Test.py 
 
 ### To analyse the model
-Run 
+Run evaluate.py
 
 Music recom system to be added
