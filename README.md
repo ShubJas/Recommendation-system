@@ -24,10 +24,10 @@ After Training , you will find the trained model structure and weights are store
 <br />copy these two files, create model folder in your project directory and paste it.
 
 ### To run your emotion detection file
-Run Test.py
-<br />You can either take your live camera feed or paste the path of the video by commenting the code other out in Test.py .
+Run detect_emotion.py
+<br />You can either take your live camera feed or paste the path of the video by commenting the code other out in Test.py 
 
 ### To analyse the model
-Run detect_emotion.py
+Run 
 
 Music recom system to be added
