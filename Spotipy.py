@@ -5,7 +5,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 import pandas as pd
 import time
 
-auth_manager = SpotifyClientCredentials('1a5c010032bc43eb870f87a68861cac2','0e91c7a37f7b42e983a847b2bb6004da')
+auth_manager = SpotifyClientCredentials('','')
 sp = spotipy.Spotify(auth_manager=auth_manager)
 
 def getTrackIDs(user, playlist_id):
