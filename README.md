@@ -30,5 +30,5 @@ Run detect_emotion.py
 ### To analyse the model
 Run evaluate.py
 
-#To run the webapp
-Run app.py and vist the link that appears in the Terminal
+###To run the webapp
+Run app.py and visit the link that appears in the Terminal
