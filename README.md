@@ -1,4 +1,4 @@
-# Recommendation-system using emotion detection
+# Music Recommendation-system using emotion detection
 download FER2013 dataset
 <br />https://www.kaggle.com/msambare/fer2013
 <br />In the same folder, create a new folder named data and save the test and train folders in it.
