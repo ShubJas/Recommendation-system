@@ -1,39 +1,23 @@
 import numpy as np
 import cv2
 from PIL import Image
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout, Flatten
-from tensorflow.keras.layers import Conv2D
-from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.layers import MaxPooling2D
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from pandastable import Table, TableModel
-from tensorflow.keras.preprocessing import image
 import datetime
 from threading import Thread
-from Spotipy import *  
 import time
 import pandas as pd
+from keras.models import model_from_json
+
 face_cascade=cv2.CascadeClassifier("haarcascades//haarcascade_frontalface_default.xml")
 ds_factor=0.6
 
-emotion_model = Sequential()
-emotion_model.add(Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=(48,48,1)))
-emotion_model.add(Conv2D(64, kernel_size=(3, 3), activation='relu'))
-emotion_model.add(MaxPooling2D(pool_size=(2, 2)))
-emotion_model.add(Dropout(0.25))
-emotion_model.add(Conv2D(128, kernel_size=(3, 3), activation='relu'))
-emotion_model.add(MaxPooling2D(pool_size=(2, 2)))
-emotion_model.add(Conv2D(128, kernel_size=(3, 3), activation='relu'))
-emotion_model.add(MaxPooling2D(pool_size=(2, 2)))
-emotion_model.add(Dropout(0.25))
-emotion_model.add(Flatten())
-emotion_model.add(Dense(1024, activation='relu'))
-emotion_model.add(Dropout(0.5))
-emotion_model.add(Dense(7, activation='softmax'))
-emotion_model.load_weights('model.h5')
+json_file = open('model//emotion_model.json', 'r')
+loaded_model_json = json_file.read()
+json_file.close()
+emotion_model = model_from_json(loaded_model_json)
 
-cv2.ocl.setUseOpenCL(False)
+# load weights into new modele
+emotion_model.load_weights("model//emotion_model.h5")
 
 emotion_dict = {0:"Angry",1:"Disgusted",2:"Fearful",3:"Happy",4:"Neutral",5:"Sad",6:"Surprised"}
 music_dist={0:"songs/angry.csv",1:"songs/disgusted.csv ",2:"songs/fearful.csv",3:"songs/happy.csv",4:"songs/neutral.csv",5:"songs/sad.csv",6:"songs/surprised.csv"}
@@ -122,9 +106,9 @@ class VideoCamera(object):
 
 			maxindex = int(np.argmax(prediction))
 			show_text[0] = maxindex 
-			print("===========================================",music_dist[show_text[0]],"===========================================")
-			print(df1)
-			cv2.putText(image, emotion_dict[maxindex], (x+20, y-60), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+			# print("===========================================",music_dist[show_text[0]],"===========================================")
+			# print(df1)
+			cv2.putText(image, emotion_dict[maxindex], (x+20, y-60), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2, cv2.LINE_AA)
 			df1 = music_rec()
 			
 		global last_frame1
