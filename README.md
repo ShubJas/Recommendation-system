@@ -20,7 +20,7 @@ numpy
 ### To train Emotion detector model
 Run Train.py
 
-After Training , you will find the trained model structure and weights are stored in your project directory. emotion_model.json emotion_model.h5
+After Training , you will find the trained model structure and weights are stored in your project directory. emotion_model.json and emotion_model.h5
 <br />copy these two files, create model folder in your project directory and paste it.
 
 ### To run your emotion detection file
@@ -30,4 +30,5 @@ Run detect_emotion.py
 ### To analyse the model
 Run evaluate.py
 
-
+#To run the webapp
+Run app.py and vist the link that appears in the Terminal
